@@ -1,0 +1,119 @@
+  {{!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> --}}
+
+<script>
+  function yo(){
+    console.log('sd');
+
+  }
+  function(order){
+    
+  
+}; 
+var rzp1 = new Razorpay(options)
+ rzp1.open(); 
+  
+  function verifyPayment(){
+
+  }
+</script>
+{{!-- action="/mainpage/buycrypto/buy" --}}
+{{!--  --}}
+
+
+
+
+<form action="/mainpage/buycrypto/buy" onsubmit="" method="post" >
+  <div class="form-row">
+   <div class="form-group col-md-6">
+      <label for="">INPUT QUANTITY:</label>
+      <input type="text" class="form-control" name="quantity" placeholder="AMOUNT">
+    </div>
+     
+  <button type="submit" class="btn btn-primary" name="buy" id="buy">Buy</button>
+</form>
+
+
+
+
+{{!-- <!DOCTYPE html>
+<html>
+<title>Stripe Payment Demo</title>
+<body>
+	<h3>Welcome to Payment Gateway</h3>
+  
+	<form action="payment" method="POST">
+     
+	<script
+
+		src="//checkout.stripe.com/v2/checkout.js"
+		class="stripe-button"
+		data-key="{{key}}"
+		data-amount="2500"
+		data-currency="inr"
+		data-name="Crafty Gourav"
+		data-description="Handmade Art and Craft Products"
+		data-locale="auto" >
+		</script>
+
+
+	</form>
+</body>
+</html> --}}
+
+
+
+
+{{!-- <script>
+  $(document).ready(function(){
+    $('.pay-form').submit(function(e){
+      e.preventdefault();
+
+      var formData=$(this).serialize();
+
+      $.ajax(
+        url:"/mainpage/buycrypto/buy",
+        type:"POST",
+        data:formData,
+        success:function(res){
+          if(res.success){
+             var options = {
+    "key": "rzp_test_xbkkCY21TwzcJn", // Enter the Key ID generated from the Dashboard
+    "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Acme Corp",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+        verifyPayment(response);
+    }, 
+     "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9000090000"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+          };
+
+          var razorpayObject=new Razorpay(options);
+          razorpayObject.on('payment-failed',function(response){
+            alert("payment Failed");
+          });
+          razorpayObject.open();
+        }
+        else{
+          alert(res.msg);
+        }
+
+      })
+    })
+  })
+</script> --}}

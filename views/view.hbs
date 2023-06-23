@@ -1,0 +1,158 @@
+
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: #3b5998;
+  color: white;
+  padding: 20px;
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex;
+  background-color: #f0f2f5;
+}
+
+/* Navigation bar links */
+.navbar a {
+  color: black;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Navigation bar icons */
+.navbar a.icon {
+  display: block;
+  position: relative;
+}
+
+.navbar a.icon .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+
+/* Current page */
+.navbar a.active {
+  background-color: #e9ebee;
+}
+
+/* User profile section */
+.profile {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* User profile picture */
+.profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* User profile info */
+.profile .info {
+  margin-left: 20px;
+}
+
+.profile .info h1 {
+  font-size: 32px;
+}
+
+.profile .info p {
+  font-size: 18px;
+}
+
+/* User profile tabs */
+.tabs {
+  margin-top: 20px;
+}
+
+.tabs button {
+  background-color: #f0f2f5;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  font-size: 16px;
+}
+
+.tabs button:hover {
+  background-color: #e9ebee;
+}
+
+.tabs button.active {
+  background-color: white;
+}
+
+/* User profile content */
+.content {
+  
+}
+</style>
+</head>
+<body>
+
+{{!-- <div class="header">
+<h1>Facebook</h1>
+</div> --}}
+
+{{!-- <div class="navbar">
+<a href="#" class="active">Home</a>
+<a href="#">Friends</a>
+<a href="#">Messages</a>
+<a href="#" class="icon"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-messenger.png"/><span class="badge">3</span></a>
+<a href="#" class="icon"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-notifications.png"/><span class="badge">5</span></a>
+<a href="#" class="icon"><img src="https://img.icons8.com/ios-filled/50/000000/menu.png"/></a>
+</div> --}}
+
+<div class="profile">
+<img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User picture">
+<div class="info">
+<h1>MC STORES</h1>
+<p>Phone no : 297619368712</p>
+<p>Lives in Redmond, Washington</p>
+<p>From New York, New York</p>
+<p>Single</p>
+</div>
+</div>
+
+{{!-- <div class="tabs">
+<button class="active">Timeline</button>
+<button>About</button>
+<button>Photos</button>
+<button>Friends</button>
+<button>More</button>
+</div> --}}
+
+<div class="content">
+<!-- Content goes here -->
+</div>
+
+</body>
+</html>
+
+{{#each products}}
+<div class="card" style="width: 18rem; float:left">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{{/each}}

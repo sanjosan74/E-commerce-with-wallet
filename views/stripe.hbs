@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<title>Stripe Payment Demo</title>
+<body>
+	<h3>Welcome to Payment Gateway</h3>
+
+
+
+	<button id="pay-btn" onclick="handleBuy()">buy</button>
+  
+<script src="https://js.stripe.com/v3/"></script>
+
+  <script>
+
+
+function handleBuy(){
+	const buy_now_button = document.querySelector('#pay-btn')
+		buy_now_button.addEventListener('click', event => {
+			var stripe = Stripe(Stripe_key)
+			stripe.redirectToCheckout({
+				// Make the id field from the Checkout Session creation API response
+				// available to this file, so you can provide it as parameter here
+				// instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+				sessionId: "{{ session_id }}"
+			}).then(function (result) {
+				// If `redirectToCheckout` fails due to a browser or network
+				// error, display the localized error message to your customer
+				// using `result.error.message`.
+			});
+		})
+}
+</script>
+	{{!-- <form action="payment" method="POST"> --}}
+     
+	{{!-- <script
+
+		src="//checkout.stripe.com/v2/checkout.js"
+		class="stripe-button"
+		data-key="{{key}}"
+		data-amount="{{data.quantity}}"
+		data-currency="inr"
+		data-name="Crafty Gourav"
+		data-description="Handmade Art and Craft Products"
+		data-locale="auto" >
+		</script>
+
+
+	</form> --}}
+</body>
+</html>

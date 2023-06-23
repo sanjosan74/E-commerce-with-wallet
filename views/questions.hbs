@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+   margin: 0 auto;
+  background-color: rgb(249, 247, 246);   
+
+}
+
+.header {
+  margin:0px;
+  background-color: #A62100;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F8F8F8;
+  padding: 10px;
+  width:100%;
+}
+
+.navbar a {
+  color: #A62100;
+  text-decoration: none;
+ 
+}
+
+.navbar input {
+  width: 40%;
+  border: 1px solid #A62100;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li a {
+  display: block;
+  color: #A62100;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.sidebar li a:hover {
+  background-color: #F8F8F8;
+}
+
+.content {
+  width: 75%;
+}
+
+.content h2 {
+  color: #A62100;
+}
+
+.content ul {
+  list-style-type: none;
+}
+
+.content li {
+    border-bottom :1px solid #A62100; 
+    padding :10px
+}
+
+.content li a {
+    display :block; 
+    color :black; 
+    text-decoration :none
+}
+
+.content li a:hover {
+    background-color :#F8F8F8
+}
+
+.content .question {
+    font-weight :bold
+}
+
+.content .details {
+    color :gray; 
+    font-size :small
+}
+
+.content button {
+    width :fit-content; 
+    align-self :flex-start; 
+    background-color :#A62100; 
+    color :white; 
+    border :none; 
+    border-radius :5px; 
+    padding :10px; 
+    margin-top :10px
+}
+.answer-button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .mainsz{
+      background-image: url("https://pbs.twimg.com/media/FwMPELTWYFAZGtO?format=jpg&name=4096x4096");
+    }
+</style>
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+   <section>
+   
+
+
+
+
+
+
+
+<div class="mainsz" >
+<div class="container">
+<div class="header">
+{{!-- <img src="logo.png" alt="Quora logo" class="logo"> --}}
+<h1>BlocoQ</h1>
+<h4>A place to share knowledge and better understand the world</h4>
+</div>
+<div class="navbar">
+<a href="/mainpage">Home</a>
+<a href="/mainpage/questions/addq">Ask a question</a>
+<a href="/mainpage/events">Events page</a>
+<a href="/mainpage/lbbook">Local Businesses</a>
+<a href="/mainpage/buycrypto">Wallet</a>
+<input type="text" placeholder="Search BlocoQ">
+</div>
+<div class="main">
+<div class="sidebar">
+<ul>
+<li><a href="/mainpage/questions/addq">Ask your question</a></li>
+<li><a href="/mainpage">Home</a></li>
+<li><a href="/mainpage/lbbook">Local Businesses</a></li>
+<li><a href="#">Create a Space</a></li>
+</ul>
+</div>
+{{!-- <h2>Questions for you</h2> --}}
+<div class="content">
+ {{#each questions}}
+<ul>
+<li><a href="#"><span class="question">{{this.question}}</span><br><span class="details">Asked by {{this.name}} on{{this.date}}</span><span>
+  <a href="questions/ques-to-qcart/{{this._id}}" class="answer-button">Answer this question</a></span></a></li>
+
+{{!-- <li><a href="#"><span class="question">How can I improve my coding skills?</span><br><span class="details">Asked by Jane Doe on May 16,2023</span></a></li>
+{{/each}}
+<li><a href="#"><span class="question">What are the benefits of meditation?</span><br><span class="details">Asked by Bob Lee on May 15,2023</span></a></li>
+<li><a href="#"><span class="question">What is the best way to learn a new language?</span><br><span class="details">Asked by Alice Wang on May 14,2023</span></a></li>
+<li><a href="#"><span class="question">What are some interesting facts about space?</span><br><span class="details">Asked by David Jones on May 13,2023</span></a></li> --}}
+</ul>
+  {{/each}}
+<br><br><br><br><br><br><br><br><br><br><br>
+{{!-- <a href="/mainpage/questions/addq" class="btn btn-success">ask a question</a> --}}
+{{!-- <button type="button" href="/mainpage/questions/addq">Add Question</button> --}}
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container mt-5">
+        {{!-- <div class="row">
+            {{#each questions}}
+            <div class="col-md-3">
+
+                <div class="card" style="width: 18rem;">
+                     <img src="{{this.image}}" class="card-img-top" alt="image">
+                         <div class="card-body">
+                             <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.inputPassword4}}</p>
+                                <p class="card-text">{{this.description}}</p>
+                                 <a href="#" class="btn btn-primary">order</a>
+                         </div>
+                    </div>
+
+            </div>
+            {{/each}}
+        </div> --}}
+
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+   </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+  <!DOCTYPE html>
+{{!-- <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Question Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #9d107e;
+      background-image: url(https://pbs.twimg.com/media/FvrjStLX0Agy4yu?format=jpg&name=large);
+    }
+
+    .banner {
+      width: 100%;
+      height: 200px;
+      background-image: url('https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW130cy?ver=ae87lo'); /* Replace this URL with your cool image */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+       position: fixed;
+        top: 0;
+      left: 0;
+    }
+
+    .banner-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .question-container {
+    position: relative;
+      top: 0px;
+       /* Adjust this value to control the slide effect */
+       max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 200px); 
+    }
+
+    .question {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #ff6f61;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: rgba(69, 162, 245, 0.8); /* Adjust the alpha value (0.8) for desired translucency */
+    }
+
+    .question-title {
+      font-size: 24px;
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
+
+    .question-details {
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .question-description {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .user-info {
+      color: #888;
+      margin-top: 10px;
+    }
+
+    .user-info span {
+      margin-right: 10px;
+    }
+
+    .answer-button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h1 class="banner-title">BQuest</h1>
+  </div>
+{{#each questions}}
+  <div class="question-container">
+    <div class="question">
+      <h2 class="question-title">What is your question?</h2>
+      <div class="question-details">
+        Asked by <span class="user-info">John Doe</span> on <span class="user-info">May 17, 2023</span>
+      </div>
+      <div class="question-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum erat vitae diam venenatis, sed egestas metus eleifend. Aenean eu ligula sit amet lectus tincidunt eleifend.
+      </div>
+      <a href="#" class="answer-button">Answer this question</a>
+    </div>
+  </div>
+  {{/each}}
+</body>
+</html>
+
+</html> --}}

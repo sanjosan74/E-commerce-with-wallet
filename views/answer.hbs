@@ -1,0 +1,187 @@
+{{!-- <div class="container mt-5">
+    <div class="row">
+        <form action="/mainpage/questions/addq" method="post" enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="">Name</label>
+      <input type="text" class="form-control" name="name" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="">Description</label>
+      <input type="text" class="form-control" name="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Address</label>
+    <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="">Address 2</label>
+    <input type="text" class="form-control" name="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="">City</label>
+      <input type="text" class="form-control" name="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      
+    </div>
+    
+  </div>
+  <div class="form-group">
+    <div class="form-check">   
+    
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">submit</button>
+</form>
+</div>
+
+</div> --}}
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #A62100;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F8F8F8;
+  padding: 10px;
+}
+
+.navbar a {
+  color: #A62100;
+  text-decoration: none;
+}
+
+.navbar input {
+  width: 40%;
+  border: 1px solid #A62100;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li a {
+  display: block;
+  color: #A62100;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.sidebar li a:hover {
+  background-color: #F8F8F8;
+}
+
+.content {
+  width: 75%;
+}
+
+.content h2 {
+  color: #A62100;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content label {
+  color: #A62100;
+}
+
+.content textarea {
+  resize: none;
+}
+
+.content button {
+  width: fit-content;
+  align-self: flex-end;
+  background-color: #A62100;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+{{!-- <img src="logo.png" alt="Quora logo" class="logo"> --}}
+<h1>BlocoQ</h1>
+<p>A place to share knowledge and better understand the world</p>
+</div>
+<div class="navbar">
+<a href="#">Home</a>
+<a href="#">Answer</a>
+<a href="#">Spaces</a>
+<a href="#">Notifications</a>
+<a href="#">Profile</a>
+<input type="text" placeholder="Search Quora">
+</div>
+<div class="main">
+<div class="sidebar">
+<ul>
+<li><a href="#">Browse Spaces</a></li>
+<li><a href="#">Discover Spaces</a></li>
+<li><a href="#">Your Spaces</a></li>
+<li><a href="#">Create a Space</a></li>
+</ul>
+</div>
+<div class="content">
+<h2>write your answer</h2>
+<form action="/mainpage/questions/answer" method="post">
+{{!-- <label for="title">Title:</label> --}}
+{{!-- <input type="text" id="title" name="question" placeholder="Start your question with 'What', 'How', 'Why', etc."> --}}
+<input type="text"  name="name" value="{{user.name}}" hidden>
+<input type="text"  name="date" value='{{date}}' hidden>
+<input type="text" name="que" value="{{que}}" hidden>
+
+<label for="details">answer:</label>
+<textarea id="details" name="answer" rows="10" cols="50" placeholder=""></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
+

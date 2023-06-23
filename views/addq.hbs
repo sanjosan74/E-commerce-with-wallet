@@ -1,0 +1,147 @@
+
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #A62100;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F8F8F8;
+  padding: 10px;
+}
+
+.navbar a {
+  color: #A62100;
+  text-decoration: none;
+}
+
+.navbar input {
+  width: 40%;
+  border: 1px solid #A62100;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li a {
+  display: block;
+  color: #A62100;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.sidebar li a:hover {
+  background-color: #F8F8F8;
+}
+
+.content {
+  width: 75%;
+}
+
+.content h2 {
+  color: #A62100;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content label {
+  color: #A62100;
+}
+
+.content textarea {
+  resize: none;
+}
+
+.content button {
+  width: fit-content;
+  align-self: flex-end;
+  background-color: #A62100;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+{{!-- <img src="logo.png" alt="Quora logo" class="logo"> --}}
+<h1>BlocoQ</h1>
+<p>A place to share knowledge and better understand the world</p>
+</div>
+<div class="navbar">
+<a href="#">Home</a>
+<a href="#">Answer</a>
+<a href="#">Spaces</a>
+<a href="#">Notifications</a>
+<a href="#">Profile</a>
+<input type="text" placeholder="Search BlocoQ">
+</div>
+<div class="main">
+<div class="sidebar">
+<ul>
+<li><a href="#">Browse Spaces</a></li>
+<li><a href="#">Discover Spaces</a></li>
+<li><a href="#">Your Spaces</a></li>
+<li><a href="#">Create a Space</a></li>
+</ul>
+</div>
+<div class="content">
+<h2>What is your question </h2>
+<form action="/mainpage/questions/addq" method="post">
+<label for="title">Title:</label>
+<input type="text" id="title" name="question" placeholder="Start your question with 'What', 'How', 'Why', etc.">
+<input type="text"  name="name" value="{{user.name}}" hidden>
+<input type="text"  name="date" value='{{date}}' hidden>
+
+
+<label for="details">Details:</label>
+<textarea id="details" name="details" rows="10" cols="50" placeholder="Optional"></textarea>
+<button type="submit">Add Question</button>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
+

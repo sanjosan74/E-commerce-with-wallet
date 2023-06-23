@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    body {
+      font-family: 'Amatic SC', cursive;
+    }
+
+    .card {
+      width: 300px;
+      background-color: #3498db; /* Blue background color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-19px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #fff; /* White text color */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #fff; /* White text color */
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      display: inline-block;
+      background-color: #fff; /* White background color for the link */
+      color: #3498db; /* Blue link color */
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      font-weight: bold;
+    }
+
+    .card-link:hover {
+      background-color: #eee; /* Light gray background color on hover */
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .link{
+      color: azure;
+    }
+    .alert{
+      width:100%;
+    }
+    .card-container{
+background-image: url("https://pbs.twimg.com/media/FwMPELTWYFAZGtO?format=jpg&name=4096x4096");
+
+    }
+  </style>
+  </head>
+  {{!-- <body> style="background-image: url(https://pbs.twimg.com/media/FvrjStLX0Agy4yu?format=jpg&name=large)"> --}}
+    <body>
+         <section>
+ 
+  <div class="card-container" >
+        <div class="row">
+<div class="card bg-dark text-white">
+  <img src="https://pbs.twimg.com/media/FvwPzRdWIAArRho?format=jpg&name=900x900" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Add your Business !!</h5>
+    <p class="card-text">Register your business by clicking the button below now</p>
+    <a href="/mainpage/lbbook/add" class="btn btn-success">add business</a>
+  </div>
+</div>
+
+  
+            {{#each business}}
+            <div class="col-md-3">
+
+                <div class="card mt-3" style="height: 30rem;"> {{!--style="width: 18rem;"--}}
+                     <img src={{this.imglnkshop}} class="card-img-top" alt=https://pbs.twimg.com/media/FvrjStIX0AMXBcw?format=jpg&name=large style="height: 10rem;">
+                         <div class="card-content">
+                             <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.phno}}</p>
+                                <p class="card-text">{{this.description}}</p>
+                                <a href={{this.gmplnk}} class="link">go to gmap
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-central-south-asia" viewBox="0 0 16 16">
+  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM4.882 1.731a.482.482 0 0 0 .14.291.487.487 0 0 1-.126.78l-.291.146a.721.721 0 0 0-.188.135l-.48.48a1 1 0 0 1-1.023.242l-.02-.007a.996.996 0 0 0-.462-.04 7.03 7.03 0 0 1 2.45-2.027Zm-3 9.674.86-.216a1 1 0 0 0 .758-.97v-.184a1 1 0 0 1 .445-.832l.04-.026a1 1 0 0 0 .152-1.54L3.121 6.621a.414.414 0 0 1 .542-.624l1.09.818a.5.5 0 0 0 .523.047.5.5 0 0 1 .724.447v.455a.78.78 0 0 0 .131.433l.795 1.192a1 1 0 0 1 .116.238l.73 2.19a1 1 0 0 0 .949.683h.058a1 1 0 0 0 .949-.684l.73-2.189a1 1 0 0 1 .116-.238l.791-1.187A.454.454 0 0 1 11.743 8c.16 0 .306.084.392.218.557.875 1.63 2.282 2.365 2.282a.61.61 0 0 0 .04-.001 7.003 7.003 0 0 1-12.658.905Z"/>
+</svg>
+</a><br>
+                                 <a href="/mainpage/lbbook/edit-product/{{this._id}}" class="btn btn-primary">edit</a>
+                                  {{!-- <button type="button" href="/mainpage/lbbook/edit-product/{{this._id}}" class="btn btn-outline-success">EDIT</button> --}}
+                                 <a href="/mainpage/lbbook/delete-product/{{this._id}}" class="btn btn-danger">delete</a>
+                                 {{!-- <a href="/mainpage/lbbook/add-to-cart/{{this._id}}" class="btn btn-primary">add to  cart</a> --}}
+                                  <a href="/mainpage/lbbook/view/{{this._id}}" class="btn btn-primary">view shop</a>
+                                  <a href="/mainpage/lbbook/add-item-to-shop/{{this._id}}" class="btn btn-primary">add item</a>
+                                  <a href="/mainpage/lbbook/view-all-products" class="btn btn-primary">view all products</a>
+                                  {{!-- <button type="button" href="/mainpage/lbbook/view-all-products" class="btn btn-outline-success">View all products</button> --}}
+                         </div>
+                    </div>
+
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+
+
+   </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

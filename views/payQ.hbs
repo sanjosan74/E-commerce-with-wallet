@@ -1,0 +1,111 @@
+    
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E Wallet</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main{
+      height: 1000px;
+      background-image: url("https://pbs.twimg.com/media/FwMPELTWYFAZGtO?format=jpg&name=4096x4096");
+    }
+
+    .container {
+      width: 400px;
+      height: 300px;
+     
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+      background-image: url("https://pbs.twimg.com/media/FwMPELTWYFAZGtO?format=jpg&name=4096x4096");
+    }
+
+    .header {
+      height: 80px;
+      background-color: #9c88ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header h1 {
+      color: white;
+      font-size: 24px;
+    }
+
+    .content {
+      height: 220px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .content span {
+      font-weight: bold;
+    }
+
+    .content button {
+      width: 150px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2ecc71;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    
+    <div class="main"><br><br><br><br><br><br>
+  <div class="container">
+    <div class="header">
+      <h1>Pay 10 coins to ask question</h1>
+    </div>
+    <div class="content">
+      <p>Your current balance is:{{user.wallet}}</p>
+      <p><span id="balance">{{user.wallet}}</span></p>
+      {{!-- <button id="add">Add / Buy </button> --}}
+      <a href="/mainpage/questions/addqi" class="btn btn-success">   Pay 10   </a><br>
+      <a href="/mainpage/questions" class="btn btn-success">   CAncel   </a><br>
+
+    </div>
+  </div>
+
+  {{!-- <script>
+    // Get the elements from the document
+  //  const balance = document.getElementById("balance");
+  //  const add = document.getElementById("add");
+
+    // Add a click event listener to the button
+    add.addEventListener("click", function() {
+      // Get the current balance value and parse it as a number
+   //   let currentBalance = Number(balance.textContent.slice(1));
+
+      // Add 10 to the current balance and update the text content
+   //   let newBalance = currentBalance + 10;
+      balance.textContent = "$" + newBalance;
+
+    });
+  </script> --}}
+  </div>
+</body>
+</html>
